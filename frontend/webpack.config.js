@@ -21,6 +21,13 @@ const configuration = {
   entry: path.resolve(__dirname, './src/index.js'),
   devServer: {
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: { '/api': '/' },
+        changeOrigin: true,
+      },
+    },
   },
   output: {
     path: path.resolve(__dirname, './dist'),

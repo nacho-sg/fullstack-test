@@ -13,3 +13,18 @@ body {
 .main {
   padding: 16px;
 }
+
+.api-status {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-left: 16px;
+
+  &[data-status="ONLINE"] {
+    background-color: greenyellow;
+  }
+  &[data-status="OFFLINE"] {
+    background-color: red;
+  }
+}
